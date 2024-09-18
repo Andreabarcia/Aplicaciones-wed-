@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Dos Números</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function realizarOperaciones() {
+            // Obtener los valores ingresados por el usuario
+            const num1 = parseFloat(document.getElementById('numero1').value);
+            const num2 = parseFloat(document.getElementById('numero2').value);
+
+            // Verificar que los números sean válidos
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Por favor, ingrese números válidos.');
+                return;
+            }
+
+            let resultado = '';
+
+            // Realizar las operaciones en un bucle
+            for (let i = 1; i <= 5; i++) {
+                switch (i) {
+                    case 1:
+                        resultado += `Iteración ${i}: Suma = ${num1 + num2} <br>`;
+                        break;
+                    case 2:
+                        resultado += `Iteración ${i}: Resta = ${num1 - num2} <br>`;
+                        break;
+                    case 3:
+                        resultado += `Iteración ${i}: Multiplicación = ${num1 * num2} <br>`;
+                        break;
+                    case 4:
+                        if (num2 !== 0) {
+                            resultado += `Iteración ${i}: División = ${(num1 / num2).toFixed(2)} <br>`;
+                        } else {
+                            resultado += `Iteración ${i}: División = Error (división por cero) <br>`;
+                        }
+                        break;
+                    case 5:
+                        if (num2 !== 0) {
+                            resultado += `Iteración ${i}: Módulo = ${num1 % num2} <br>`;
+                        } else {
+                            resultado += `Iteración ${i}: Módulo = Error (división por cero) <br>`;
+                        }
+                        break;
+                }
+            }
+
+            // Mostrar el resultado
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Operaciones con Dos Números</h1>
+    <form onsubmit="event.preventDefault(); realizarOperaciones();">
+        <label for="numero1">Número 1:</label>
+        <input type="number" id="numero1" required><br><br>
+
+        <label for="numero2">Número 2:</label>
+        <input type="number" id="numero2" required><br><br>
+
+        <button type="submit">Calcular</button>
+    </form>
+    <div id="resultado"></div>
+</body>
+</html>
