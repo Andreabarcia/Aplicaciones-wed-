@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Operaciones con Bucle</title>
+</head>
+<body>
+  <h2>Operaciones con dos números</h2>
+
+  <label for="num1">Ingrese el primer número:</label>
+  <input type="number" id="num1"><br><br>
+
+  <label for="num2">Ingrese el segundo número:</label>
+  <input type="number" id="num2"><br><br>
+
+  <button onclick="realizarOperaciones()">Calcular</button>
+
+  <h3>Resultados:</h3>
+  <div id="resultados"></div>
+
+  <script>
+    function realizarOperaciones() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const resultados = document.getElementById('resultados');
+      resultados.innerHTML = ""; // Limpiar resultados anteriores
+
+      for (let i = 1; i <= 5; i++) {
+        let resultado;
+        switch (i) {
+          case 1:
+            resultado = `1. Suma: ${num1} + ${num2} = ${num1 + num2}`;
+            break;
+          case 2:
+            resultado = `2. Resta: ${num1} - ${num2} = ${num1 - num2}`;
+            break;
+          case 3:
+            resultado = `3. Multiplicación: ${num1} * ${num2} = ${num1 * num2}`;
+            break;
+          case 4:
+            if (num2 !== 0) {
+              resultado = `4. División: ${num1} / ${num2} = ${num1 / num2}`;
+            } else {
+              resultado = "4. División: Error - División por cero";
+            }
+            break;
+          case 5:
+            if (num2 !== 0) {
+              resultado = `5. Módulo: ${num1} % ${num2} = ${num1 % num2}`;
+            } else {
+              resultado = "5. Módulo: Error - División por cero";
+            }
+            break;
+        }
+        const p = document.createElement("p");
+        p.textContent = resultado;
+        resultados.appendChild(p);
+      }
+    }
+  </script>
+</body>
+</html>
