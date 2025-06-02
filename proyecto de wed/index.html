@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio de Sesión</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+  <img src="images/ULEAM.png" alt="Logo ULEAM">
+  <h1>Universidad Laica Eloy Alfaro de Manabí</h1>
+</div>
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+      <label for="usuario">Usuario:</label>
+      <input type="text" id="usuario" required>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" required>
+      <label for="rol">Rol:</label>
+      <select id="rol" required>
+        <option value="">Seleccione rol</option>
+        <option value="estudiante">Estudiante</option>
+        <option value="tutor">Tutor</option>
+        <option value="admin">Administrativo</option>
+      </select>
+      <button type="submit">Iniciar Sesión</button>
+      <p style="text-align:center;"><a href="recover.html">¿Olvidó su contraseña?</a></p>
+    </form>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

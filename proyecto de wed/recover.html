@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="images/ULEAM.png" alt="Logo ULEAM">
+        <h1>Universidad Laica Eloy Alfaro de Manabí</h1>
+    </div>
+    <div class="container">
+        <h2>Recuperar Contraseña</h2>
+        <form id="recoverForm">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" placeholder="correo@uleam.edu.ec" required>
+            <button type="submit">Enviar enlace de recuperación</button>
+        </form>
+        <p id="message" style="text-align:center; color: green; margin-top: 10px;"></p>
+        <p style="text-align:center; margin-top:20px;">
+            <a href="./index.html">← Volver al inicio de sesión</a>
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('recoverForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message');
+
+            if (email === '') {
+                message.style.color = 'red';
+                message.textContent = 'Por favor, ingrese su correo electrónico.';
+            } else if (!validateEmail(email)) {
+                message.style.color = 'red';
+                message.textContent = 'Ingrese un correo válido.';
+            } else {
+                message.style.color = 'green';
+                message.textContent = `Se ha enviado un enlace de recuperación a ${email}. Revise su bandeja de entrada.`;
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

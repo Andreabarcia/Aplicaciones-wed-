@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Administrativo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+  <img src="images/ULEAM.png" alt="Logo ULEAM">
+  <h1>Universidad Laica Eloy Alfaro de Manabí</h1>
+</div>
+  <div class="panel">
+    <h2>Panel Administrativo</h2>
+    <input type="text" placeholder="Buscar por estudiante, tutor, tema, estado">
+    <table>
+      <tr><th>Estudiante</th><th>Tutor</th><th>Tema</th><th>Estado</th><th>Fechas clave</th></tr>
+      <tr><td>Juan Pérez</td><td>Dr. Gómez</td><td>IA en Salud</td><td>Propuesta</td><td>2025-05-30</td></tr>
+    </table>
+    <button onclick="alert('Mostrando reporte general')">Ver reporte general</button>
+    <button onclick="alert('Exportando datos...')">Exportar datos (PDF/Excel)</button>
+    <button onclick="window.location.href='index.html'">Cerrar sesión</button>
+  </div>
+</body>
+</html>

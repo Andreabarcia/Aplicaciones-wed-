@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Nueva Tutoría</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="header">
+  <img src="images/ULEAM.png" alt="Logo ULEAM">
+  <h1>Universidad Laica Eloy Alfaro de Manabí</h1>
+</div>
+  <div class="form-container">
+    <h2>Registrar Nueva Tutoría</h2>
+    <form onsubmit="alert('Solicitud enviada correctamente'); return false;">
+      <label for="tema">Tema de titulación:</label>
+      <input type="text" id="tema" required>
+      <label for="area">Área de estudio:</label>
+      <select id="area" required><option>Informática</option><option>Administración</option></select>
+      <label for="descripcion">Descripción breve:</label>
+      <textarea id="descripcion" required></textarea>
+      <label for="tutor">Tutor:</label>
+      <select id="tutor" required><option>Dr. Gómez</option><option>Dra. Sánchez</option></select>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+    <button onclick="window.location.href='estudiante.html'">Volver al Panel</button>
+  </div>
+</body>
+</html>
